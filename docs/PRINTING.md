@@ -26,7 +26,7 @@ recommendations. The release print ZIP contains only the current parts.
   3 mm. Raised screw surrounds reach 6.2 mm overall. Face up, no supports;
   earlier A1 slice about **1 h 48 min / 57 g**, including purge overhead.
 - The front and back make a **40 mm body**; screw surrounds extend to 43.2 mm.
-- Four **M3 × 8** screws into M3 heat-set inserts. The lid projects 5 mm into
+- Four **M3 × 8** screws into M3 heat-set inserts. The screws project 5 mm into
   **4.4 mm diameter × 6 mm deep** pockets. M3 × 12 is too long for this joint.
   H3, H4 or H5 inserts can fit the depth if their outside diameter suits your
   print. The 4.4 mm pilot was selected with a physical fit coupon.
