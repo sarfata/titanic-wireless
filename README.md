@@ -11,9 +11,12 @@ This is an interactive prop: it does **not transmit or receive RF**.
 
 *Design visualization, not a photograph of the finished build.*
 
-[Project story and interactive demo](https://thomas.sarlandie.net/titanic-radio)
-· [Download printable parts](https://github.com/sarfata/titanic-wireless/releases/latest)
+[Download printable parts](https://github.com/sarfata/titanic-wireless/releases/latest)
 · [Wiring](docs/WIRING.md) · [Printing and assembly](docs/PRINTING.md)
+
+The illustrated project story and embedded demo are prepared for Thomas's personal
+website and await publication. Meanwhile, the browser demo below runs locally
+from this repository, and all source and print files are available here.
 
 ## Try it before building
 
