@@ -1,0 +1,32 @@
+{
+  "printer": "Bambu A1 / 0.4 mm",
+  "pieces": 3,
+  "support_enabled": false,
+  "mesh_repairs": 0,
+  "orientation": "Flat backs down; relief faces up",
+  "layer_height_mm": 0.20000000298023224,
+  "walls": 3,
+  "infill_percent": 20.0,
+  "seconds": 3216.110595703125,
+  "filaments": [
+    {
+      "filament_id": "GFL99",
+      "id": 1,
+      "main_used_g": 20.433284759521484,
+      "total_used_g": 20.433284759521484
+    }
+  ],
+  "warnings": [
+    {
+      "msg": "not_support_traditional_timelapse",
+      "level": "2",
+      "error_code": "10018003"
+    },
+    {
+      "msg": "not_support_traditional_timelapse",
+      "level": "3",
+      "error_code": "1000C003"
+    }
+  ],
+  "physical_fit_verified": false
+}

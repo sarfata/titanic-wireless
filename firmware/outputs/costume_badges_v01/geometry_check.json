@@ -1,0 +1,44 @@
+[
+  {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "components": 1,
+    "volume_mm3": 5964.960622369189,
+    "physical_fit_verified": false,
+    "dimensions_mm": [
+      35.0,
+      80.0,
+      3.200000047683716
+    ],
+    "flat_back_z_mm": 0.0,
+    "stl": "01_Shoulder_left_80x35.stl"
+  },
+  {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "components": 1,
+    "volume_mm3": 5964.960622369189,
+    "physical_fit_verified": false,
+    "dimensions_mm": [
+      35.0,
+      80.0,
+      3.200000047683716
+    ],
+    "flat_back_z_mm": 0.0,
+    "stl": "02_Shoulder_right_80x35.stl"
+  },
+  {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "components": 1,
+    "volume_mm3": 5305.457757277029,
+    "physical_fit_verified": false,
+    "dimensions_mm": [
+      54.0,
+      62.0,
+      3.200000047683716
+    ],
+    "flat_back_z_mm": 0.0,
+    "stl": "03_Anchor_chest_54x62.stl"
+  }
+]

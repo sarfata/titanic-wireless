@@ -1,0 +1,31 @@
+{
+  "meaning": "Printed lever/base clearance only, not measured click stroke or force",
+  "samples": [
+    {
+      "shaft_drop_mm": 0,
+      "lever_base_overlap_mm3": 0.0,
+      "stop_drop_mm": 0.0,
+      "finger_drop_mm": 0.0
+    },
+    {
+      "shaft_drop_mm": 0.3,
+      "lever_base_overlap_mm3": 0.0,
+      "stop_drop_mm": 0.43,
+      "finger_drop_mm": 0.64
+    },
+    {
+      "shaft_drop_mm": 0.6,
+      "lever_base_overlap_mm3": 0.0,
+      "stop_drop_mm": 0.86,
+      "finger_drop_mm": 1.28
+    },
+    {
+      "shaft_drop_mm": 0.85,
+      "lever_base_overlap_mm3": 0.0,
+      "stop_drop_mm": 1.2183333333333333,
+      "finger_drop_mm": 1.8133333333333332
+    }
+  ],
+  "lift_stop_overlap_at_3mm_up_mm3": 1.5191807864254467,
+  "physical_click_return_tested": false
+}

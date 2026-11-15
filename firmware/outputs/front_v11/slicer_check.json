@@ -1,0 +1,38 @@
+{
+  "objects": [
+    {
+      "object_id": "11",
+      "min_mm": [
+        28.0,
+        58.0,
+        0.0
+      ],
+      "max_mm": [
+        228.0,
+        198.0,
+        6.1999998000000005
+      ],
+      "dimensions_mm": [
+        200.0,
+        140.0,
+        6.1999998000000005
+      ]
+    }
+  ],
+  "supports": false,
+  "colour_changes": 1,
+  "bed": "Textured PEI Plate",
+  "mesh_repairs": 0,
+  "slicer_warnings": [
+    {
+      "msg": "not_support_traditional_timelapse",
+      "level": "2",
+      "error_code": "10018003"
+    },
+    {
+      "msg": "not_support_traditional_timelapse",
+      "level": "3",
+      "error_code": "1000C003"
+    }
+  ]
+}

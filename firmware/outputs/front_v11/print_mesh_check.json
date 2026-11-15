@@ -1,0 +1,14 @@
+[
+  {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 70187.364,
+    "file": "01_Titanic_front_v11.stl",
+    "xyz_mm": [
+      200.0,
+      140.0,
+      6.2
+    ]
+  }
+]

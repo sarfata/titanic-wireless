@@ -1,0 +1,132 @@
+{
+  "01_Top_mushroom_button_6mm": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 4125.845488877351,
+    "bounds_mm": [
+      [
+        -13.0,
+        13.0
+      ],
+      [
+        -13.0,
+        13.0
+      ],
+      [
+        0.0,
+        19.0
+      ]
+    ],
+    "dimensions_mm": [
+      26.0,
+      26.0,
+      19.0
+    ],
+    "physical_fit_verified": false
+  },
+  "02_Key_glue_base": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 8126.615489803029,
+    "bounds_mm": [
+      [
+        -8.0,
+        76.0
+      ],
+      [
+        -11.0,
+        11.0
+      ],
+      [
+        0.0,
+        25.899999618530273
+      ]
+    ],
+    "dimensions_mm": [
+      84.0,
+      22.0,
+      25.899999618530273
+    ],
+    "physical_fit_verified": false
+  },
+  "03_Key_lever": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 2758.590967237903,
+    "bounds_mm": [
+      [
+        -5.0,
+        69.0
+      ],
+      [
+        -4.000001907348633,
+        3.9999983310699463
+      ],
+      [
+        0.0,
+        10.0
+      ]
+    ],
+    "dimensions_mm": [
+      74.0,
+      8.000000238418579,
+      10.0
+    ],
+    "physical_fit_verified": false
+  },
+  "04_Key_finger_button": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 3278.4380110617385,
+    "bounds_mm": [
+      [
+        -13.0,
+        13.0
+      ],
+      [
+        -13.0,
+        13.0
+      ],
+      [
+        0.0,
+        10.0
+      ]
+    ],
+    "dimensions_mm": [
+      26.0,
+      26.0,
+      10.0
+    ],
+    "physical_fit_verified": false
+  },
+  "05_Key_shaft_cap_6p3mm": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 418.3956108484635,
+    "bounds_mm": [
+      [
+        -5.400000095367432,
+        5.400000095367432
+      ],
+      [
+        -5.400000095367432,
+        5.400000095367432
+      ],
+      [
+        0.0,
+        7.0
+      ]
+    ],
+    "dimensions_mm": [
+      10.800000190734863,
+      10.800000190734863,
+      7.0
+    ],
+    "physical_fit_verified": false
+  }
+}

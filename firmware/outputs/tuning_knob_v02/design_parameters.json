@@ -1,0 +1,21 @@
+{
+  "diameter_mm": 39,
+  "height_mm": 19,
+  "grip_flutes": 40,
+  "edge_round_mm": 1,
+  "measured_shaft_diameter_mm": 6,
+  "measured_shaft_tip_above_front_mm": 17,
+  "measured_ribbed_length_mm": 12,
+  "socket_diameter_mm": 6.0,
+  "socket_depth_mm": 16,
+  "installed_panel_gap_mm": 1,
+  "shaft_tip_clearance_mm": 0,
+  "lead_in_chamfer_mm": 0.6,
+  "retention": "Push fit on ribbed shaft; no hardware",
+  "nut_recess_diameter_mm": 13,
+  "nut_recess_depth_mm": 5.5,
+  "physical_fit_verified": false,
+  "shaft_status": "User measured 6 mm ribbed shaft, tip17 mm above panel, ribbed length12 mm; printed fit untested",
+  "print_orientation": "Decorative face down at Z0, shaft socket open upwards",
+  "assembly": "Push on gently; 16 mm socket depth leaves nominal1 mm rear/panel gap at the shaft tip stop. Do not force a tight print."
+}

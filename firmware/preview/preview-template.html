@@ -1,0 +1,115 @@
+<div id="titanic-radio-sim">
+  <style>
+    #titanic-radio-sim{font-family:system-ui,sans-serif;color:light-dark(#262626,#eee);font-size:14px;line-height:1.5}
+    #titanic-radio-sim *{box-sizing:border-box}
+    #titanic-radio-sim .radio-case{background:#22272a;border:8px solid #333a3f;border-radius:18px;padding:20px;color:#f4e7c7}
+    #titanic-radio-sim .plate{background:#b49451;color:#191b1b;text-align:center;padding:8px;letter-spacing:3px;font:500 18px Georgia,serif;margin-bottom:18px}
+    #titanic-radio-sim .screens{display:grid;grid-template-columns:1.18fr 1fr;gap:24px;align-items:start}
+    #titanic-radio-sim figure{margin:0;min-width:0}
+    #titanic-radio-sim figcaption{font-size:12px;margin-bottom:6px;color:#f4e7c7}
+    #titanic-radio-sim canvas{display:block;width:100%;border:5px solid #b49451;background:#f7efd8}
+    #titanic-radio-sim [data-lcd]{border:0;background:#22272a}
+    #titanic-radio-sim .controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+    #titanic-radio-sim button{font:500 14px system-ui;background:light-dark(#eae6dc,#373a3e);color:light-dark(#222,#f5efe0);border:1px solid light-dark(#bbb6a7,#777);border-radius:6px;padding:8px 14px;min-height:40px}
+    #titanic-radio-sim button:first-child{background:#b49451;color:#191b1b;border-color:#b49451}
+    #titanic-radio-sim button:disabled{opacity:.5}
+    #titanic-radio-sim .tuning{margin-top:18px;display:block}
+    #titanic-radio-sim input[type=range]{display:block;width:100%;accent-color:#b49451;margin:12px 0}
+    #titanic-radio-sim input[type=checkbox]{accent-color:#b49451}
+    #titanic-radio-sim output{font-variant-numeric:tabular-nums}
+    #titanic-radio-sim .state{margin-top:12px;min-height:24px}
+    #titanic-radio-sim .options{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px}
+    #titanic-radio-sim .options label{display:flex;gap:6px;align-items:center;min-height:32px}
+    #titanic-radio-sim .knob{height:48px;width:48px;border:5px solid #b49451;border-radius:50%;background:#22272a;position:relative;flex-shrink:0}
+    #titanic-radio-sim .knob:after{content:'';position:absolute;left:17px;top:3px;width:4px;height:12px;background:#eee0b7;transform-origin:2px 16px;transform:rotate(var(--angle,-78deg))}
+    #titanic-radio-sim .tune-row{display:flex;gap:16px;align-items:center}
+    #titanic-radio-sim .tune-row input{flex:1;min-width:0}
+    @media(max-width:520px){#titanic-radio-sim .screens{grid-template-columns:1fr;gap:18px}#titanic-radio-sim .radio-case{padding:12px}#titanic-radio-sim .plate{font-size:16px;letter-spacing:2px}#titanic-radio-sim button{min-height:44px}}
+    @font-face{font-family:TitanicHand;src:url(data:font/ttf;base64,/*FONT_DATA*/) format('truetype');font-display:swap}
+  </style>
+  <div class="radio-case">
+    <div class="plate">R.M.S. TITANIC</div>
+    <div class="screens">
+      <figure><figcaption>ePaper · idealized message preview</figcaption><canvas data-paper width="400" height="300" role="img" aria-label="ePaper message display, currently disabled"></canvas></figure>
+      <figure><figcaption>CoreS3 · S-meter / frequency / volume</figcaption><canvas data-lcd width="320" height="240" role="img" aria-label="CoreS3 round S-meter preview"></canvas></figure>
+    </div>
+    <label class="tuning" for="radio-tuning"><span data-knob-label>Tuning</span> <output data-frequency>470</output><span data-signal-label> · signal <output data-strength>0</output>%</span></label>
+    <div class="tune-row"><span class="knob" aria-hidden="true"></span><input class="cursor-interaction" id="radio-tuning" type="range" min="450" max="550" value="470" step="1" aria-label="Tuning"></div>
+  </div>
+  <div class="controls">
+    <button class="cursor-interaction" data-send type="button">Send SOS</button>
+    <button class="cursor-interaction" data-button type="button">Top button · start / stop</button>
+    <button class="cursor-interaction" data-volume type="button">Volume · hold top button</button>
+    <button class="cursor-interaction" data-demo type="button">Demo at 500</button>
+    <button class="cursor-interaction" data-reset type="button">Reset</button>
+    <button class="cursor-interaction" data-minus type="button" aria-label="Tune down one">Tune −</button>
+    <button class="cursor-interaction" data-plus type="button" aria-label="Tune up one">Tune +</button>
+  </div>
+  <div class="options">
+    <label><input data-epaper type="checkbox" checked>Enable ePaper preview</label>
+    <label><input data-sound type="checkbox">Morse sound</label>
+    <span>10 WPM · 650 / 800 Hz</span>
+  </div>
+  <div class="state" data-state aria-live="polite">Press SOS to send</div>
+  <script type="application/json" data-morse>/*MORSE_DATA*/</script>
+  <script>
+  (()=>{
+    /*SIMULATOR_SOURCE*/
+    const root=document.getElementById('titanic-radio-sim');
+    const get=s=>root.querySelector(s);
+    const sim=new RadioSimulator(JSON.parse(get('[data-morse]').textContent));
+    const lcd=get('[data-lcd]'),paper=get('[data-paper]'),lc=lcd.getContext('2d'),pc=paper.getContext('2d');
+    const slider=get('#radio-tuning'),epaper=get('[data-epaper]'),sound=get('[data-sound]');
+    let audio=null,osc=null,gain=null,lastDraw='',lastFrame=null,simTime=0;
+    const face=new Image();face.src='data:image/png;base64,/*METER_FACE*/';
+    const frequencyAtlas=new Image();frequencyAtlas.src='data:image/png;base64,/*FREQUENCY_ATLAS*/';
+    const volumeAtlas=new Image();volumeAtlas.src='data:image/png;base64,/*VOLUME_ATLAS*/';
+    const certificate=new Image();certificate.src='data:image/png;base64,/*CERTIFICATE_IMAGE*/';
+    function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{tuning:sim.frequency,volume:sim.volume,ePaperPreview:epaper.checked},privateContent:null}).catch(()=>{});}
+    function restore(state){const s=state?.modelContent;if(!s)return;if(Number.isFinite(s.tuning))sim.tune(s.tuning);if(Number.isFinite(s.volume))sim.volume=Math.max(0,Math.min(100,Math.round(s.volume)));epaper.checked=Boolean(s.ePaperPreview);lastDraw='';draw();}
+    function audioLevel(){if(!audio||!gain)return;osc.frequency.setValueAtTime(sim.volumeMode?650:(sim.pitch||650),audio.currentTime);gain.gain.setTargetAtTime(sound.checked && (sim.tone||simTime<sim.sampleUntil) && !document.hidden ? 0.025*sim.volume/80 : 0,audio.currentTime,.003);}
+    async function enableSound(){
+      if(sound.checked){try{if(!audio){audio=new(window.AudioContext||window.webkitAudioContext)();osc=audio.createOscillator();gain=audio.createGain();gain.gain.value=0;osc.connect(gain);gain.connect(audio.destination);osc.start();}await audio.resume();}catch(e){sound.checked=false;get('[data-state]').textContent='Audio unavailable in this browser; visual preview remains active.';}}
+      audioLevel();
+    }
+    function draw(){
+      slider.min=sim.volumeMode?0:450;slider.max=sim.volumeMode?100:550;slider.step=sim.volumeMode?5:1;slider.setAttribute('aria-label',sim.volumeMode?'Volume':'Tuning');slider.value=sim.volumeMode?sim.volume:sim.frequency;get('[data-knob-label]').textContent=sim.volumeMode?'Volume':'Tuning';get('[data-frequency]').textContent=sim.volumeMode?sim.volume+'%':sim.frequency;get('[data-signal-label]').hidden=sim.volumeMode;get('[data-minus]').textContent=sim.volumeMode?'Volume −':'Tune −';get('[data-plus]').textContent=sim.volumeMode?'Volume +':'Tune +';get('[data-minus]').setAttribute('aria-label',sim.volumeMode?'Decrease volume':'Tune down one');get('[data-plus]').setAttribute('aria-label',sim.volumeMode?'Increase volume':'Tune up one');get('[data-strength]').textContent=sim.strength();
+      get('.knob').style.setProperty('--angle',`${(sim.frequency-500)*2.6}deg`);
+      const key=[sim.state,sim.frequency,sim.tx,sim.rx,epaper.checked].join('|');lastDraw=key;
+      lc.fillStyle='#000';lc.fillRect(0,0,320,240);if(face.complete)lc.drawImage(face,48,8,224,224);
+      const a=(155-sim.needle*130/sim.data.meterMax)*Math.PI/180,x=160+Math.cos(a)*85,y=151-Math.sin(a)*85;
+      lc.lineCap='round';lc.strokeStyle='#736448';lc.lineWidth=2;lc.beginPath();lc.moveTo(162,153);lc.lineTo(x+2,y+2);lc.stroke();
+      lc.strokeStyle='#8a241b';lc.lineWidth=1.6;lc.beginPath();lc.moveTo(160,151);lc.lineTo(x,y);lc.stroke();
+      lc.fillStyle='#292821';lc.beginPath();lc.arc(160,151,6,0,Math.PI*2);lc.fill();
+      if(sim.frequencyVisible(simTime)&&frequencyAtlas.complete){const i=sim.frequency-450;lc.drawImage(frequencyAtlas,(i%10)*224,Math.floor(i/10)*224,224,224,48,8,224,224);}
+      if(sim.volumeMode&&volumeAtlas.complete){const i=sim.volume;lc.drawImage(volumeAtlas,(i%10)*224,Math.floor(i/10)*224,224,224,48,8,224,224);}
+      pc.fillStyle='#f5f0de';pc.fillRect(0,0,400,300);pc.fillStyle='#25251f';
+      const [tx,rx]=sim.paperText();
+      if(epaper.checked&&sim.paperView==='Certificate'){if(certificate.complete)pc.drawImage(certificate,0,0);}
+      else if(epaper.checked){pc.font='20px monospace';pc.fillText('WIRELESS OFFICE',12,26);pc.fillRect(12,34,376,1);pc.font='30px TitanicHand, cursive';pc.fillText('Titanic:',12,74);pc.fillText(tx,12,112);pc.fillText('Carpathia:',12,194);pc.fillText(rx,12,232);pc.font='16px Georgia,serif';pc.textAlign='center';pc.fillText('RECEPTION - 500 kHz / 600 m',200,279);pc.textAlign='left';}
+      else{pc.font='18px monospace';pc.fillText('ePaper preview paused',28,135);pc.font='14px monospace';pc.fillText('Enable the preview below',28,163);}
+      paper.setAttribute('aria-label',!epaper.checked?'ePaper is disabled':sim.paperView==='Certificate'?'Certificate of Radiotelegraphy for Harold Bride and Radio Cadet. Historic distress: 500 kHz / 600 metres.':`Titanic: ${tx||'blank'}. Carpathia: ${rx||'blank'}.`);
+      lcd.setAttribute('aria-label',`${sim.volumeMode?'Volume '+sim.volume+' percent':sim.frequencyVisible(simTime)?'Frequency display':'S-meter'}; ${sim.status()}; tuning ${sim.frequency} kHz; signal ${sim.strength()} percent`);
+      get('[data-state]').textContent=sim.volumeMode?'Volume '+sim.volume+'% · turn to adjust; click top button to finish':sim.paperView==='Certificate'?'Certificate · press the top button for a new exchange':sim.state==='Done'?'Help is on its way · certificate in 10 seconds':sim.status();const busy=sim.state==='Tx'||sim.state==='Rx';get('[data-send]').disabled=busy;get('[data-demo]').disabled=busy;
+    }
+    get('[data-send]').onclick=()=>{sim.send(simTime);audioLevel();draw();};
+    get('[data-button]').onclick=()=>{sim.button(simTime);audioLevel();draw();};
+    get('[data-volume]').onclick=()=>{sim.hold(simTime);draw();save();};
+    get('[data-demo]').onclick=()=>{sim.send(simTime,true);save();audioLevel();draw();};
+    get('[data-reset]').onclick=()=>{sim.reset();audioLevel();draw();};
+    const tune=n=>{if(sim.volumeMode)sim.setVolume(n,simTime);else sim.tune(n,simTime);draw();save();};slider.oninput=()=>tune(Number(slider.value));
+    get('[data-minus]').onclick=()=>tune(sim.volumeMode?sim.volume-5:sim.frequency-1);get('[data-plus]').onclick=()=>tune(sim.volumeMode?sim.volume+5:sim.frequency+1);
+    epaper.onchange=()=>{draw();save();};sound.onchange=enableSound;
+    // The round meter is also a touch target; the physical encoder controls tuning.
+    lcd.addEventListener('click',e=>{const r=lcd.getBoundingClientRect(),x=(e.clientX-r.left)*320/r.width,y=(e.clientY-r.top)*240/r.height;if((x-160)**2+(y-120)**2<=112**2){sim.button(simTime);draw();}});
+    document.addEventListener('visibilitychange',()=>{lastFrame=null;audioLevel();});
+    window.addEventListener('openai:set_globals',e=>restore(e.detail?.globals?.widgetState));
+    function frame(now){if(!document.hidden){if(lastFrame!==null){const target=simTime+Math.min(now-lastFrame,100);while(simTime<target){simTime=Math.min(target,simTime+1);sim.tick(simTime);}}lastFrame=now;audioLevel();draw();}else lastFrame=null;requestAnimationFrame(frame);}
+    let reportedHeight=0;
+    const reportHeight=()=>{const height=Math.ceil(document.body.getBoundingClientRect().height)+1;if(window.parent!==window&&height!==reportedHeight){reportedHeight=height;window.parent.postMessage({type:'titanic-radio:height',height},'*');}};
+    new ResizeObserver(reportHeight).observe(document.body);
+    window.addEventListener('load',reportHeight);
+    restore(window.openai?.widgetState);draw();document.fonts.ready.then(()=>{lastDraw='';draw();});requestAnimationFrame(frame);
+  })();
+  </script>
+</div>

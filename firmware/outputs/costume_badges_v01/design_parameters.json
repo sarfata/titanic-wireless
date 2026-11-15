@@ -1,0 +1,24 @@
+{
+  "units": "mm",
+  "pieces": 3,
+  "shoulder_mm": [
+    80,
+    35,
+    3.2
+  ],
+  "chest_mm": [
+    54,
+    62,
+    3.2
+  ],
+  "base_thickness_mm": 1.6,
+  "layer_height_mm": 0.2,
+  "supports": false,
+  "material": "single gold PLA",
+  "orientation": "flat back on bed, decorations up",
+  "attachment": "Adhesive clip or safety bar pin on flat back; hardware not included",
+  "historical_status": "Original nautical costume design; not an authenticated Titanic or naval rank badge",
+  "dimensions_status": "Compact defaults; jacket measurements not yet provided",
+  "clear_adhesive_area": "Each shoulder has a central 28 x 65 mm flat back; chest has central 38 x 30 mm flat back",
+  "physical_fit_verified": false
+}

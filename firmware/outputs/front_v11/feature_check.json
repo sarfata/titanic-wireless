@@ -1,0 +1,125 @@
+[
+  {
+    "feature": "Paper width",
+    "actual_mm": 85.4,
+    "expected_mm": 85.4,
+    "pass": true
+  },
+  {
+    "feature": "Paper height",
+    "actual_mm": 64.2,
+    "expected_mm": 64.2,
+    "pass": true
+  },
+  {
+    "feature": "Round meter",
+    "actual_mm": 28.0,
+    "expected_mm": 28,
+    "pass": true
+  },
+  {
+    "feature": "Camera lens",
+    "actual_mm": 10.0,
+    "expected_mm": 10,
+    "pass": true
+  },
+  {
+    "feature": "EC11",
+    "actual_mm": 8.0,
+    "expected_mm": 8,
+    "pass": true
+  },
+  {
+    "feature": "M3 -92/-62",
+    "actual_mm": 3.4,
+    "expected_mm": 3.4,
+    "pass": true
+  },
+  {
+    "feature": "M3 -92/62",
+    "actual_mm": 3.4,
+    "expected_mm": 3.4,
+    "pass": true
+  },
+  {
+    "feature": "M3 92/-62",
+    "actual_mm": 3.4,
+    "expected_mm": 3.4,
+    "pass": true
+  },
+  {
+    "feature": "M3 92/62",
+    "actual_mm": 3.4,
+    "expected_mm": 3.4,
+    "pass": true
+  },
+  {
+    "feature": "All apertures pass completely through panel and decoration",
+    "pass": true
+  },
+  {
+    "feature": "EC11 nut seat remains 3 mm thick",
+    "actual_mm": 3.0,
+    "pass": true
+  },
+  {
+    "feature": "Head recess -92/-62",
+    "actual_mm": 6.8,
+    "expected_mm": 6.8,
+    "pass": true
+  },
+  {
+    "feature": "M3 bearing plane -92/-62",
+    "actual_mm": 2.999999523162842,
+    "pass": true
+  },
+  {
+    "feature": "Head diameter6.4 has0.2 mm radial clearance -92/-62",
+    "pass": true
+  },
+  {
+    "feature": "Head recess -92/62",
+    "actual_mm": 6.8,
+    "expected_mm": 6.8,
+    "pass": true
+  },
+  {
+    "feature": "M3 bearing plane -92/62",
+    "actual_mm": 2.999999523162842,
+    "pass": true
+  },
+  {
+    "feature": "Head diameter6.4 has0.2 mm radial clearance -92/62",
+    "pass": true
+  },
+  {
+    "feature": "Head recess 92/-62",
+    "actual_mm": 6.8,
+    "expected_mm": 6.8,
+    "pass": true
+  },
+  {
+    "feature": "M3 bearing plane 92/-62",
+    "actual_mm": 3.0,
+    "pass": true
+  },
+  {
+    "feature": "Head diameter6.4 has0.2 mm radial clearance 92/-62",
+    "pass": true
+  },
+  {
+    "feature": "Head recess 92/62",
+    "actual_mm": 6.8,
+    "expected_mm": 6.8,
+    "pass": true
+  },
+  {
+    "feature": "M3 bearing plane 92/62",
+    "actual_mm": 3.0,
+    "pass": true
+  },
+  {
+    "feature": "Head diameter6.4 has0.2 mm radial clearance 92/62",
+    "pass": true
+  }
+]

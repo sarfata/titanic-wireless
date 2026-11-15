@@ -1,0 +1,46 @@
+{
+  "shaft_diameter_mm": 6,
+  "shaft_type": "User confirms same ribbed EC11 as front",
+  "nominal_shaft_tip_above_box_mm": 17,
+  "top_projection_independently_measured": false,
+  "projection_basis": "Same encoder and nominal3mm wall;17mm carried over from front",
+  "standalone": {
+    "diameter_mm": 26,
+    "height_mm": 19,
+    "socket_diameter_mm": 6,
+    "socket_depth_mm": 16,
+    "nominal_box_gap_mm": 1,
+    "nut_recess_diameter_mm": 13,
+    "nut_recess_depth_mm": 5.5
+  },
+  "key": {
+    "base_mm": [
+      84,
+      22,
+      25.9
+    ],
+    "pivot_height_mm": 19,
+    "cap_top_mm": 19,
+    "pivot_to_shaft_mm": 30,
+    "pivot_to_stop_mm": 43,
+    "pivot_to_finger_mm": 64,
+    "stop_post_top_mm": 17,
+    "lever_underside_mm": 19,
+    "cap_socket_diameter_mm": 6.3,
+    "cap_socket_depth_mm": 5,
+    "cap_height_mm": 7,
+    "hinge_side_gap_mm": 0.3
+  },
+  "hardware": [
+    "1 M3x12 pivot screw",
+    "2 M3x8 screws: stop and finger button",
+    "3 M3xH3 heat-set inserts: hinge, stop, finger button"
+  ],
+  "insert_pilot_diameter_mm": 4.4,
+  "insert_pilot_depth_mm": 3,
+  "stop": "Adjust to actual click, not an assumed travel; encoder must freely return",
+  "hinge_lift_stop": "Integral bridge, underside24.35, nominal0.35mm gap above lever",
+  "physical_fit_verified": false,
+  "print": "All supplied orientations, supports OFF",
+  "firmware": "Same click/hold/triple-click actions; no manual Morse keying added"
+}

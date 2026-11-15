@@ -1,0 +1,58 @@
+{
+  "datum": "print X54+vendorX, Y29-vendorZ, Z25.5+vendorY; DIN B/C face TOP",
+  "vendor_opening_scan": [
+    {
+      "centre_x_mm": 43,
+      "case_face_y_mm": 56,
+      "opening_xz_bounds_mm": [
+        [
+          38.0,
+          48.0
+        ],
+        [
+          16.25,
+          21.0
+        ]
+      ],
+      "scan_resolution_mm": 0.25,
+      "guide_to_scanned_opening_mm": 7.25
+    },
+    {
+      "centre_x_mm": 65,
+      "case_face_y_mm": 56,
+      "opening_xz_bounds_mm": [
+        [
+          60.0,
+          70.0
+        ],
+        [
+          16.25,
+          21.0
+        ]
+      ],
+      "scan_resolution_mm": 0.25,
+      "guide_to_scanned_opening_mm": 7.25
+    }
+  ],
+  "exported_stl_intersections_mm3": {
+    "v10": {
+      "left side guide band": 0.0,
+      "right side guide band": 0.0,
+      "top guide band": 1900.801181,
+      "bottom guide band": 1900.800001,
+      "Port A left approach": 0.0,
+      "DIN top outlet X43 approach": 268.800171,
+      "DIN top outlet X65 approach": 268.800171
+    },
+    "v11": {
+      "left side guide band": 0.0,
+      "right side guide band": 0.0,
+      "top guide band": 0.0,
+      "bottom guide band": 0.0,
+      "Port A left approach": 0.0,
+      "DIN top outlet X43 approach": 0.0,
+      "DIN top outlet X65 approach": 0.0
+    }
+  },
+  "physical_connector_and_wire_bends_verified": false
+}

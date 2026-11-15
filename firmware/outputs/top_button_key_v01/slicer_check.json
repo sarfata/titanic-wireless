@@ -1,0 +1,71 @@
+{
+  "button": {
+    "printer": "Bambu A1 /0.4mm",
+    "parts": [
+      "01_Top_mushroom_button_6mm"
+    ],
+    "support_enabled": false,
+    "mesh_repairs": 0,
+    "layer_height_mm": 0.20000000298023224,
+    "walls": 4,
+    "infill_percent": 30.0,
+    "seconds": 1393.99072265625,
+    "filaments": [
+      {
+        "filament_id": "GFL99",
+        "id": 1,
+        "main_used_g": 4.0583577156066895,
+        "total_used_g": 4.0583577156066895
+      }
+    ],
+    "warnings": [
+      {
+        "msg": "not_support_traditional_timelapse",
+        "level": "2",
+        "error_code": "10018003"
+      },
+      {
+        "msg": "not_support_traditional_timelapse",
+        "level": "3",
+        "error_code": "1000C003"
+      }
+    ],
+    "physical_fit_verified": false
+  },
+  "key": {
+    "printer": "Bambu A1 /0.4mm",
+    "parts": [
+      "02_Key_glue_base",
+      "03_Key_lever",
+      "04_Key_finger_button",
+      "05_Key_shaft_cap_6p3mm"
+    ],
+    "support_enabled": false,
+    "mesh_repairs": 0,
+    "layer_height_mm": 0.20000000298023224,
+    "walls": 4,
+    "infill_percent": 30.0,
+    "seconds": 3281.14208984375,
+    "filaments": [
+      {
+        "filament_id": "GFL99",
+        "id": 1,
+        "main_used_g": 14.879158973693848,
+        "total_used_g": 14.879158973693848
+      }
+    ],
+    "warnings": [
+      {
+        "msg": "not_support_traditional_timelapse",
+        "level": "2",
+        "error_code": "10018003"
+      },
+      {
+        "msg": "not_support_traditional_timelapse",
+        "level": "3",
+        "error_code": "1000C003"
+      }
+    ],
+    "physical_fit_verified": false
+  }
+}

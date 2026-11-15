@@ -1,0 +1,22 @@
+name: Firmware and browser checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: python -m pip install platformio==6.1.18
+      - run: pio run -d firmware -e cores3 -e cores3_legacy_epaper
+      - run: python firmware/tools/test_native.py
+      - run: node firmware/test/preview_test.cjs
+      - run: python firmware/tools/render_paper_preview.py && python firmware/tools/render_frequency_preview.py && python firmware/tools/build_preview.py
+      - name: Check generated demo is current
+        run: git diff --exit-code -- firmware/preview

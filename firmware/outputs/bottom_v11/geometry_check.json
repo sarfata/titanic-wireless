@@ -1,0 +1,382 @@
+{
+  "date": "2026-10-25",
+  "revision": "1.1 correctly oriented Core port clearance",
+  "body_dimensions_mm": [
+    222,
+    140,
+    37
+  ],
+  "cable_hole": {
+    "side": "Right when facing front",
+    "centre_xyz_mm": [
+      98.8,
+      -35,
+      18.5
+    ],
+    "clear_opening_mm": [
+      13,
+      10
+    ],
+    "corner_radius_mm": 1,
+    "mouth_chamfer_mm": 0.5,
+    "reason": "Feed the11.5 x8 mm USB-C housing through the closed hole; no cable cutting"
+  },
+  "epaper_shift_down_mm": 3.4,
+  "epaper_seat_from_back_mm": 34.1,
+  "top_key_bore_mm": 8,
+  "usb_storage": "Rejected by user. No cradle, new tie saddle or lower-rim cable notch in this bottom.",
+  "all_core_guides_top_mm": 9,
+  "din_case_to_top_wall_mm": 11.6,
+  "nominal_core_rear_mm": 5.2,
+  "nominal_side_capture_mm": 3.8,
+  "port_access_checks": {
+    "left side guide band": {
+      "centre_mm": [
+        25.5,
+        29,
+        23
+      ],
+      "size_mm": [
+        3,
+        54,
+        27.8
+      ],
+      "overlap_mm3": 0.0
+    },
+    "right side guide band": {
+      "centre_mm": [
+        82.5,
+        29,
+        23
+      ],
+      "size_mm": [
+        3,
+        54,
+        27.8
+      ],
+      "overlap_mm3": 0.0
+    },
+    "top guide band": {
+      "centre_mm": [
+        54,
+        57.7,
+        23
+      ],
+      "size_mm": [
+        54,
+        2.8,
+        27.8
+      ],
+      "overlap_mm3": 0.0
+    },
+    "bottom guide band": {
+      "centre_mm": [
+        54,
+        0.3,
+        23
+      ],
+      "size_mm": [
+        54,
+        2.8,
+        27.8
+      ],
+      "overlap_mm3": 0.0
+    },
+    "Port A left approach": {
+      "centre_mm": [
+        21.5,
+        15,
+        28.75
+      ],
+      "size_mm": [
+        11,
+        18,
+        12.5
+      ],
+      "overlap_mm3": 0.0
+    },
+    "DIN top outlet X43 approach": {
+      "centre_mm": [
+        43,
+        61.55,
+        20
+      ],
+      "size_mm": [
+        16,
+        11.1,
+        16
+      ],
+      "overlap_mm3": 0.0
+    },
+    "DIN top outlet X65 approach": {
+      "centre_mm": [
+        65,
+        61.55,
+        20
+      ],
+      "size_mm": [
+        16,
+        11.1,
+        16
+      ],
+      "overlap_mm3": 0.0
+    }
+  },
+  "port_reference": "Official cores3_dimensions.dxf, user DIN photos and reoriented local CoreS3.stl: print X54+vendorX, Y29-vendorZ, Z25.5+vendorY. Core rear5.2/front36.7. DIN outlets TOP; original side-port checks invalid. Broad corridors, not measured cable assemblies.",
+  "topology": {
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "connected_components": 1,
+    "volume_mm3": 176727.8987416921
+  },
+  "dimension_checks": [
+    {
+      "feature": "Side hole width along upright radio",
+      "actual_mm": 13.0,
+      "expected_mm": 13,
+      "pass": true
+    },
+    {
+      "feature": "Side hole height through enclosure depth",
+      "actual_mm": 10.0,
+      "expected_mm": 10,
+      "pass": true
+    },
+    {
+      "feature": "Top EC11 mounting bore",
+      "actual_mm": 8.0,
+      "expected_mm": 8,
+      "pass": true
+    },
+    {
+      "feature": "Paper seat-85/-36.4",
+      "actual_mm": 34.1,
+      "expected_mm": 34.1,
+      "pass": true
+    },
+    {
+      "feature": "Paper seat11/-36.4",
+      "actual_mm": 34.1,
+      "expected_mm": 34.1,
+      "pass": true
+    },
+    {
+      "feature": "Paper seat-85/35.6",
+      "actual_mm": 34.1,
+      "expected_mm": 34.1,
+      "pass": true
+    },
+    {
+      "feature": "Paper seat11/37",
+      "actual_mm": 34.1,
+      "expected_mm": 34.1,
+      "pass": true
+    },
+    {
+      "feature": "Paper guide width",
+      "actual_mm": 104.0,
+      "expected_mm": 104,
+      "pass": true
+    },
+    {
+      "feature": "Paper guide height",
+      "actual_mm": 79.5,
+      "expected_mm": 79.5,
+      "pass": true
+    },
+    {
+      "feature": "NE USB side clearance",
+      "actual_mm": 1.0,
+      "expected_mm": 1,
+      "pass": true
+    },
+    {
+      "feature": "Core pocket width at low guides",
+      "actual_mm": 55.0,
+      "expected_mm": 55,
+      "pass": true
+    },
+    {
+      "feature": "Low side guide top25.3/7",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Low side guide top25.3/51",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Low side guide top82.7/7",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Low side guide top82.7/51",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Core pocket height at low guides",
+      "actual_mm": 55.0,
+      "expected_mm": 55,
+      "pass": true
+    },
+    {
+      "feature": "Core seat",
+      "actual_mm": 4.2,
+      "expected_mm": 4.2,
+      "pass": true
+    },
+    {
+      "feature": "Former USB tie saddle area is empty",
+      "actual_mm": 3.0,
+      "expected_mm": 3,
+      "pass": true
+    },
+    {
+      "feature": "No old lower-wall exit",
+      "actual_mm": -70.0,
+      "expected_mm": -70,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert-92/-62 diameter",
+      "actual_mm": 4.39999,
+      "expected_mm": 4.4,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert-92/-62 depth",
+      "actual_mm": 6.0,
+      "expected_mm": 6,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert-92/62 diameter",
+      "actual_mm": 4.39999,
+      "expected_mm": 4.4,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert-92/62 depth",
+      "actual_mm": 6.0,
+      "expected_mm": 6,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert92/-62 diameter",
+      "actual_mm": 4.39999,
+      "expected_mm": 4.4,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert92/-62 depth",
+      "actual_mm": 6.0,
+      "expected_mm": 6,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert92/62 diameter",
+      "actual_mm": 4.39999,
+      "expected_mm": 4.4,
+      "pass": true
+    },
+    {
+      "feature": "Lid insert92/62 depth",
+      "actual_mm": 6.0,
+      "expected_mm": 6,
+      "pass": true
+    },
+    {
+      "feature": "Overall dimension0",
+      "actual_mm": 222.0,
+      "expected_mm": 222,
+      "pass": true
+    },
+    {
+      "feature": "Overall dimension1",
+      "actual_mm": 140.0,
+      "expected_mm": 140,
+      "pass": true
+    },
+    {
+      "feature": "Overall dimension2",
+      "actual_mm": 37.0,
+      "expected_mm": 37,
+      "pass": true
+    },
+    {
+      "feature": "Core rear seat34/10",
+      "actual_mm": 4.2,
+      "expected_mm": 4.2,
+      "pass": true
+    },
+    {
+      "feature": "Core rear seat34/48",
+      "actual_mm": 4.2,
+      "expected_mm": 4.2,
+      "pass": true
+    },
+    {
+      "feature": "Core low end guide34/0.3",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Core low end guide34/57.7",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Core rear seat74/10",
+      "actual_mm": 4.2,
+      "expected_mm": 4.2,
+      "pass": true
+    },
+    {
+      "feature": "Core rear seat74/48",
+      "actual_mm": 4.2,
+      "expected_mm": 4.2,
+      "pass": true
+    },
+    {
+      "feature": "Core low end guide74/0.3",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "Core low end guide74/57.7",
+      "actual_mm": 9.0,
+      "expected_mm": 9,
+      "pass": true
+    },
+    {
+      "feature": "DIN port43 to upper wall",
+      "actual_mm": 11.6,
+      "expected_mm": 11.6,
+      "pass": true
+    },
+    {
+      "feature": "DIN port65 to upper wall",
+      "actual_mm": 11.6,
+      "expected_mm": 11.6,
+      "pass": true
+    }
+  ],
+  "plug_overlap_mm3": {
+    "side_feed_envelope": 0.0,
+    "inserted_envelope": 0.0
+  },
+  "physical_fit_verified": false,
+  "retained_hardware": "Core rear seats; all four low corner guides at Z9; ePaper bearing ledges, lid inserts and full-depth strap loops",
+  "remaining_prior_feedback": "ePaper screw retention remains unmodified; actual PCB hole positions unavailable",
+  "print_orientation": "Back flat on bed, open front up"
+}

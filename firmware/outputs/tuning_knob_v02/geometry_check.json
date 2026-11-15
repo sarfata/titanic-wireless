@@ -1,0 +1,33 @@
+{
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "connected_components": 1,
+  "volume_mm3": 20693.662445934726,
+  "physical_fit_verified": false,
+  "continuous_side_wall_verified": true,
+  "installed_panel_gap_mm": 1.0,
+  "bounds_mm": [
+    [
+      -19.5,
+      19.5
+    ],
+    [
+      -19.5,
+      19.5
+    ],
+    [
+      0.0,
+      19.0
+    ]
+  ],
+  "dimensions_mm": [
+    39.0,
+    39.0,
+    19.0
+  ],
+  "measured_features": {
+    "socket_diameter_mm": 5.999999682108553,
+    "nut_relief_diameter_mm": 12.999998826246943,
+    "socket_floor_z_mm": 3.0
+  }
+}

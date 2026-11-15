@@ -1,0 +1,71 @@
+{
+  "body_mm": [
+    200,
+    140
+  ],
+  "base_mm": 3,
+  "decoration_mm": 0.8,
+  "corner_radius_mm": 3,
+  "screws_x_y_mm": [
+    [
+      -92,
+      -62
+    ],
+    [
+      -92,
+      62
+    ],
+    [
+      92,
+      -62
+    ],
+    [
+      92,
+      62
+    ]
+  ],
+  "screw_holes_mm": 3.4,
+  "epaper_centre_mm": [
+    -37,
+    3
+  ],
+  "epaper_window_mm": [
+    85.4,
+    64.2
+  ],
+  "meter_centre_mm": [
+    54,
+    29
+  ],
+  "meter_hole_mm": 28,
+  "camera_centre_mm": [
+    54,
+    8
+  ],
+  "camera_hole_mm": 10,
+  "camera_basis": "M5Stack DXF lens is on case centreline, 21 mm below case centre; user confirms camera at bottom",
+  "encoder_centre_mm": [
+    52,
+    -36
+  ],
+  "encoder_hole_mm": 8,
+  "encoder_mount_thickness_mm": 3,
+  "encoder_basis": "User redrilled same EC11 top mount with 5/16 inch (7.9375 mm) bit",
+  "spacers": {
+    "count": 0,
+    "basis": "User requests flush seating on the rim; no spacers"
+  },
+  "screw_shrouds": {
+    "outside_mm": 10.4,
+    "head_pocket_mm": 6.8,
+    "height_above_base_mm": 3.2,
+    "bearing_plane_mm": 3,
+    "outer_round_mm": 0.55,
+    "fit_status": "Assumed head envelope up to diameter6.4/height3.0 mm; actual screw measurements pending"
+  },
+  "assembled_body_depth_mm": 40,
+  "depth_including_raised_details_mm": 43.2,
+  "bottom": "Existing printed v0.8, unchanged",
+  "lid_screws": "M3 x 8; 5 mm projection without spacers, 1 mm nominal bore-tip clearance",
+  "fit_limits": "Front fit trial: visible-paper alignment, Core padding, camera field of view and encoder nut engagement need physical confirmation"
+}
